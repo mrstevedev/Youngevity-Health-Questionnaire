@@ -1,0 +1,133 @@
+body {
+  /*background: linear-gradient(#42B9C2, #208686);*/
+  font-family: 'Montserrat';
+  font-size: 11px;
+  font-weight: 300;
+  /*color:#fff;*/
+}
+
+.header {
+  color: #222;
+  padding: 20px 0 10px 0;
+}
+
+.container {
+  max-width: 375px;
+  text-align: center;
+}
+
+.questions-container {
+  border-radius: 5px;
+  background-color:#fff;
+  padding: 5px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.quiz-title {
+  margin: 40px 0 0 0;
+}
+
+.quiz-intro {
+  font-size: large;
+}
+
+/* Styles from YGY UI Library */
+
+h1,h2,h3,h4,h5 {
+  font-family: 'Montserrat';
+  color: #404040;
+  margin:0;
+  text-transform: uppercase
+}
+
+h1{
+  font-size: 30px;
+}
+
+h3{
+  font-size: 18px;
+  line-height: 20px;
+}
+
+h4 {
+  font-size: 11px;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+h5{
+  font-size: 16px;
+  font-weight: 500;
+  color: #464646;
+}
+
+.large-headline{
+  font-weight: 900;
+  font-size: 60px;
+  text-transform: uppercase;
+  line-height: 50px;
+}
+
+.large-headline-2 {
+  font-weight:300;
+  font-size: 45px;
+}
+
+.button {
+  background: #EA6534;
+  color: #fff;
+  border-radius: 0;
+  width: 100%;
+  height: 55px;
+  margin: 10px 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.button:focus,
+.button:active {outline:0!important;}
+
+.btn.focus, .btn:focus, .btn:hover {
+  color: #fff;
+  background: #EA6534;
+}
+
+/* End styles from YGY UI Library */
+
+/* Get Started View Styles */
+
+.company-products {
+  display: flex;
+  margin: 30px 0px;
+}
+
+.product-image {
+  display: flex;
+  align-items: center;
+}
+
+.product-copy {
+  text-align: left;
+  padding: 0 30px;
+}
+
+.rounded {
+  border-radius: 100%;
+}
+
+.sub-container{
+  width: 78%;
+  margin: 130px auto;
+}
+
+.disclaimer {
+  font-style: italic;
+  color: #666666;
+  width: 100%;
+  margin: 20px 0px 130px auto;
+  padding: 0 8px;
+}

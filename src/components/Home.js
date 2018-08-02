@@ -4,10 +4,12 @@ import { Button } from './Button';
 export class Home extends React.Component {
 
     componentDidMount() {
+        document.body.classList.add("logodefault");
         document.body.classList.add("background-start-screen");
     }
 
     componentWillUnmount() {
+        document.body.classList.remove("logodefault");
         document.body.classList.remove("background-start-screen");
     }
 

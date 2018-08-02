@@ -26,6 +26,22 @@ html{
   padding: 5px;
 }
 
+.logodefault .logo{
+  height: 50px;
+  width: 50px;
+  display: block;
+  background: url('./svg/logowhite.svg');
+  margin: 0 auto;
+}
+
+.logocolor .logo {
+  height: 50px;
+  width: 50px;
+  display: block;
+  background: url('./svg/logo.svg');
+  margin: 0 auto;
+}
+
 .logo {
   height: 50px;
 }

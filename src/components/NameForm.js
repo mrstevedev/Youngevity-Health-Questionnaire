@@ -11,6 +11,14 @@ export class NameForm extends React.Component {
         }
     }
 
+    componentDidMount() {
+        document.body.classList.add("logocolor");
+    }
+
+    componentWillUnmount() {
+        document.body.classList.remove("logocolor");
+    }
+
     handleChange(e) {
         this.setState({
             enableBtn: e.target.value !== '',

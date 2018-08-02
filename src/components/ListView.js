@@ -9,10 +9,9 @@ export class ListView extends React.Component {
         }
     }
 
-    
-
-
     componentDidMount() {
+        document.body.classList.add("logocolor");
+
         //this.interval = setInterval(() => this.tick(), 1000);
         console.log('component did mount');
         console.log(sessionStorage.getItem('firstname'));
@@ -24,9 +23,9 @@ export class ListView extends React.Component {
         this.redirectToSplashScreen();
     }
 
-    // componentWillUnmount() {
-    //     clearInterval(this.interval);
-    // }
+    componentWillUnmount() {
+        document.body.classList.remove("logocolor");
+    }
 
     redirectToSplashScreen() {
         setTimeout(() => {

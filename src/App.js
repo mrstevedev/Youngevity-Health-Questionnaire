@@ -24,6 +24,7 @@ class App extends React.Component {
       title: null,
       fact: null,
       answerOptions: [],
+      answer: null,
       answers: null,
       answersCount: {
         reallypoor: 0,
@@ -34,9 +35,8 @@ class App extends React.Component {
       },
       result: null,
       name: null,
-      logo: require('./svg/logowhite.svg'),
-      logoWhite: true,
-      logoColor: false
+      logowhite: require('./svg/logowhite.svg'),
+      logodefault: require('./svg/logo.svg')
     };
   }
 
@@ -46,7 +46,7 @@ class App extends React.Component {
       //console.log('the categoryId:'+ ' ' + quizQuestions[0].categoryId+' '+'question: '+quizQuestions[0].question+' '+'Title: '+quizQuestions[0].title + ' ' + 'Answer:'+ ' ' + JSON.stringify(quizQuestions[0].answers));
       //console.log(quizQuestions[index]);
       //console.log(quizQuestions[index].answers);
-      
+
       this.setState({
         question: quizQuestions[0].question,
         title: quizQuestions[0].title,
@@ -60,9 +60,9 @@ class App extends React.Component {
 
   handleAnswerSelected(event) {
     //log the current answer clicked
-    
+    event.preventDefault();
+    console.log('answer clicked');
   }
-
 
   updateName(name) {
     this.setState({ name: name });
@@ -82,16 +82,27 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        
-        <Header 
-          logo={this.state.logo}
+
+        <Header
+          logowhite={this.state.logowhite}
         />
-        
+
         <Switch>
-          <Route exact path="/" component={HomeScreen} />
-          <Route path="/whats-your-first-name" render={(props) => <NameForm updater={(name) => this.updateName(name)} />} />
-          <Route path="/overview-list" render={(props) => <ListView updater={(name) => this.forwardToSplash(name)} />} />
-          <Route path="/joints-bones-teeth" render={(props) => <SplashScreenJointsBonesTeeth updater={() => { this.forwardToQuiz() }} />} />
+          <Route exact path="/"
+            component={HomeScreen}
+          />
+          <Route path="/whats-your-first-name" render={(props) =>
+            <NameForm
+              updater={(name) =>
+                this.updateName(name)} />} />
+          <Route path="/overview-list" render={(props) =>
+            <ListView updater={(name) =>
+              this.forwardToSplash(name)} />}
+          />
+          <Route path="/joints-bones-teeth" render={(props) =>
+            <SplashScreenJointsBonesTeeth
+              updater={() => { this.forwardToQuiz() }} />}
+          />
           <Route path="/quiz" render={(props) =>
             <Quiz
               isCurrent={this.state.isCurrent}

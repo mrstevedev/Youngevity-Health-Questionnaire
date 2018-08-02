@@ -10,10 +10,10 @@ export class SplashScreenJointsBonesTeeth extends React.Component {
     componentDidMount() {
         console.log('splash screen mounted');
 
-        document.body.classList.add("background-joint-screen");
+        document.body.classList.add('background-joint-screen');
+        document.body.classList.add('logodefault');
 
         this.setState({
-            uri: require('../svg/logowhite.svg'),
             firstname: sessionStorage.getItem('firstname'),
         });
         console.log('you will be redirected to the quiz in 8 seconds');
@@ -22,6 +22,7 @@ export class SplashScreenJointsBonesTeeth extends React.Component {
     }
 
     componentWillUnmount() {
+        document.body.classList.remove('logodefault')
         document.body.classList.remove("background-joint-screen");
     }
 

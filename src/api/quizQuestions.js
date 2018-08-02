@@ -322,7 +322,7 @@ let quizQuestions = [
         question: 'How would you rate your blood circulation?',
         title: 'Get With the Flow',
         fact: 'Magnesium, omegas, berries, beets, and spicy foods help promote a healthy heart and blood circulation,  supporting energy production throughout the body.',
-        category: 'Brain & Hearth Health',
+        category: 'Brain & Heart Health',
         answers: [
             {
                 answer: 'Really Poor'
@@ -348,7 +348,7 @@ let quizQuestions = [
         question: "How is your blood pressure?",
         title: 'Take the Pressure Off',
         fact: 'Healthy weight loss and a nutrient-rich diet both support heart and blood pressure health. Fiber is also key, because it helps lower cholesterol and make you feel full.',
-        category: 'Brain & Hearth Health',
+        category: 'Brain & Heart Health',
         answers: [
             {
                 answer: 'Really Poor'
@@ -374,7 +374,7 @@ let quizQuestions = [
         question: "How does your mind feel overall?",
         title: 'By Land and By Sea',
         fact: 'Ever have days where you just don’t feel that sharp? Food for thought: deep water fish like salmon are rich in omega-3 essential fatty acids, which support brain function. Avocados also help because they contain monounsaturated (good) fat that increases blood flow to the brain.',
-        category: 'Brain & Hearth Health',
+        category: 'Brain & Heart Health',
         answers: [
             {
                 answer: 'Really Poor'

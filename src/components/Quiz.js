@@ -8,17 +8,25 @@ import { ProgressBar } from './ProgressBar';
 export class Quiz extends React.Component {
     constructor(props) {
         super(props);
-        
-    }
-    render() {
 
+    }
+
+    componentDidMount() {
+        document.body.classList.add('logocolor');
+    }
+
+    componentWillUnmount() { 
+        document.body.classList.remove('logodecolor');
+    }
+
+    render() {
         return (
             <div className="quizContainer">
 
-                <ProgressBar 
-                    category={this.props.category} 
+                <ProgressBar
+                    category={this.props.category}
                     isCurrent={this.props.isCurrent}
-                    />
+                />
 
                 <div className="questions">
 
@@ -33,6 +41,7 @@ export class Quiz extends React.Component {
                         //answerContent={key.content}
                         //answerType={key.type}
                         answer={this.props.answer}
+                        answers={this.props.answers}
                         questionId={this.props.questionId}
                         onAnswerSelected={this.props.onAnswerSelected}
                     />

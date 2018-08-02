@@ -1,17 +1,14 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 export class Button extends React.Component {
 
-    handleClick(e) {
-
-    }
-
-    render(){
-        return(
+    render() {
+        return (
             <div>
-                <button className="button btn" onClick={this.handleClick}>
-                    Get Started
-                </button>
+                <Link to="/whats-your-first-name" >
+                    <input className="button btn" defaultValue="Get Started" />
+                </Link>
             </div>
         )
     }

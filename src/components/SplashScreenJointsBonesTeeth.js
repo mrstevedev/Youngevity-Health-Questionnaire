@@ -1,25 +1,53 @@
 import React from 'react';
-import LogoWhite from '../svg/logo-white.svg';
+import LogoWhite from '../svg/logowhite.svg';
 import JointsBonesTeethIcon from '../svg/icon-joints.svg';
 
-// Stateless Component // Takes props // props are available in stateless component
-const SplashScreenJointsBonesTeeth = (props) => {
-    return (
-        <div>
-            <header>
-                <img src={LogoWhite} />
-            </header>
-            <div class="SplashScreen-just">
-                <div className="just-icon">
-                    <img src={JointsBonesTeethIcon} alt="LogoWhite" className="logo" />
-                </div>
-                <div className="splash-description">
-                    <p class="splash-copy">
-                        Let's start with joints, bones & teeth.
-                    </p>
+export class SplashScreenJointsBonesTeeth extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    componentDidMount() {
+        console.log('splash screen mounted');
+
+        document.body.classList.add("background-joint-screen");
+
+        this.setState({
+            uri: require('../svg/logowhite.svg'),
+            firstname: sessionStorage.getItem('firstname'),
+        });
+        console.log('you will be redirected to the quiz in 8 seconds');
+        
+        this.redirectToSplashScreen();
+    }
+
+    componentWillUnmount() {
+        document.body.classList.remove("background-joint-screen");
+    }
+
+
+    redirectToSplashScreen() {
+        setTimeout(() => {
+            this.props.updater(this.state);
+        }, 4000);
+    }
+
+    render() {
+        return (
+            <div>
+                <div className="">
+                    <div className="sub-container splash">
+                        <img src={JointsBonesTeethIcon} alt={'LogoWhite'} className="splashIcon" />
+                        <div className="splashDescription">
+                            <p className="splashText">
+                                Let's start with joints, bones & teeth.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    );
+        );
+    }
 };
 
+export default SplashScreenJointsBonesTeeth;

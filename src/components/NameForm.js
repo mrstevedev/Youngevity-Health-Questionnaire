@@ -1,22 +1,20 @@
 import React from 'react';
 
 export class NameForm extends React.Component {
+
     constructor(props) {
         super(props);
 
         this.state = {
             enableBtn: false,
-            firstname: ""
+            firstname: ''
         }
-
-        this.handleSubmitButton = this.handleSubmitButton.bind(this);
-
     }
 
     handleChange(e) {
         this.setState({
-            firstname: e.target.value,
-            enableBtn: e.target.value !== ''
+            enableBtn: e.target.value !== '',
+            firstname: this.refs.firstname.value
         });
     }
 
@@ -26,34 +24,37 @@ export class NameForm extends React.Component {
         // By giving the input the `ref` attribute, we can access it anywhere
         const firstName = this.refs.firstname.value;
 
-        console.log('first name is: '+ firstName);
-
-        // Submit the value to the parent component
-        //this.props.handleSubmitButton(firstName);
-
         this.setState({
-            firstname: this.refs.firstname.value
-        }, () => {});
+            firstname: firstName
+        }, () => this.props.updater(firstName), this.saveToLocal());
+    }
+
+    saveToLocal() {
+        sessionStorage.setItem('firstname', this.state.firstname);
+        console.log(this.state.firstname);
     }
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmitButton.bind(this)}>
-                    <label>What's your First Name?</label><br />
-                    <div>
+            <div className="nameForm">
+                <div className="sub-container">
+                    <form onSubmit={this.handleSubmitButton.bind(this)}>
+                        <h2>What's your<br /> first name?</h2>
+                        <div>
+                            <input
+                                type="text"
+                                ref="firstname"
+                                onChange={this.handleChange.bind(this)}
+                            />
+                        </div>
                         <input
-                            type="text"
-                            ref="firstname"
-                            onChange={this.handleChange.bind(this)}
+                            type="submit"
+                            className="button btn"
+                            value={this.state.enableBtn ? 'Continue' : 'Please enter your name'}
+                            disabled={!this.state.enableBtn}
                         />
-                    </div>
-                    <input
-                        type="submit"
-                        value={this.state.enableBtn ? 'Continue' : 'Please enter your name'}
-                        disabled={!this.state.enableBtn}
-                    />
-                </form>
+                    </form>
+                </div>
             </div>
         )
     }

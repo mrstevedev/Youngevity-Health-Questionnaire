@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ec6529;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="sadness" transform="translate(-1.823 -3)">
+    <circle id="Ellipse_353" data-name="Ellipse 353" class="cls-1" cx="22.5" cy="22.5" r="22.5" transform="translate(1.823 3)"/>
+    <ellipse id="Ellipse_30" data-name="Ellipse 30" class="cls-2" cx="2.083" cy="2.083" rx="2.083" ry="2.083" transform="translate(14.915 17.559)"/>
+    <ellipse id="Ellipse_31" data-name="Ellipse 31" class="cls-2" cx="2.083" cy="2.083" rx="2.083" ry="2.083" transform="translate(29.464 17.559)"/>
+    <path id="Path_437" data-name="Path 437" class="cls-2" d="M12.433,0A14.867,14.867,0,0,0,0,6.745L2.147,8.139A12.29,12.29,0,0,1,13.8,2.644a12.34,12.34,0,0,1,8.828,5.5L24.77,6.745A14.87,14.87,0,0,0,14.084.1,14.248,14.248,0,0,0,12.433,0Z" transform="translate(36.594 37.587) rotate(180)"/>
+  </g>
+</svg>

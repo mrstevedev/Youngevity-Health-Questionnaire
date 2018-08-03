@@ -12,10 +12,11 @@ class AnswerOption extends React.Component {
         const Answers = Questions.slice(0, 5).map((answer, i) => {
             return <a
                 key={i}
-                id={JSON.stringify(Questions[i].answers[i])}
+                href={'#!'}
+                id={Questions[i].answers[i].answer}
                 onClick={this.props.onAnswerSelected}
-                className={`${this.props.answer} ${'answer'}`}>
-                <li>{this.props.answer}</li>
+                className={`${Questions[i].answers[i].answer.toLowerCase()} ${'answer'}`}>
+                <li>{Questions[i].answers[i].answer}</li>
             </a>
         });
 

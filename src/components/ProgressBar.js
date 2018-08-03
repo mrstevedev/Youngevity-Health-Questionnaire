@@ -17,7 +17,7 @@ export class ProgressBar extends React.Component {
         const ProgressCategories = ['Joints & Bones', 'Metabolism & Energy', 'Brain & Heart Health', 'Digestion & Immunity', 'Additional Health Goals'];
 
         // Map through the categories and return a category
-        const ProgressList = ProgressCategories.map((category, index) => {
+        const ProgressList = ProgressCategories.slice(0, 1).map((category, index) => {
             return <li key={index} className={`${category} ${this.props.category === category ? 'current' : ''}`}>{category}</li>;
         });
 

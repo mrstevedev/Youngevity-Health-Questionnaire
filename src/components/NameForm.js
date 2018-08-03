@@ -13,10 +13,12 @@ export class NameForm extends React.Component {
 
     componentDidMount() {
         document.body.classList.add("logocolor");
+        document.body.classList.add('background-nameform-screen');
     }
 
     componentWillUnmount() {
         document.body.classList.remove("logocolor");
+        document.body.classList.remove('background-nameform-screen');
     }
 
     handleChange(e) {

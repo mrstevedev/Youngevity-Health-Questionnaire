@@ -188,10 +188,16 @@ h5{
 
 .background-start-screen {
   background: 
-  url('./images/homescreenbgbig.png') no-repeat 162px 540px, 
-  url('./images/homescreenbg1small.png') no-repeat 360px center, 
-  url('./images/homescreenbg2small.png') no-repeat -27px 120px, 
-  linear-gradient(#42B9C2, #208686);
+    url('./images/homescreenbgbig.png') no-repeat 162px 540px, 
+    url('./images/homescreenbg1small.png') no-repeat 360px center, 
+    url('./images/homescreenbg2small.png') no-repeat -27px 120px, 
+    linear-gradient(#42B9C2, #208686);
+}
+
+.background-nameform-screen{
+  background:
+    url('./images/nameformbglarge.png') no-repeat right bottom,
+    url('./images/nameformbgsmall.png') no-repeat left top;
 }
 
 .background-joint-screen {

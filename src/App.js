@@ -16,8 +16,6 @@ class App extends React.Component {
 
     this.state = {
       category: null,
-      currentCategory: null,
-      isCurrent: false,
       counter: 0,
       questionId: 1,
       question: null,
@@ -35,8 +33,6 @@ class App extends React.Component {
       },
       result: null,
       name: null,
-      logowhite: require('./svg/logowhite.svg'),
-      logodefault: require('./svg/logo.svg')
     };
   }
 
@@ -45,13 +41,13 @@ class App extends React.Component {
     quizQuestions.map((question, index) => {
       //console.log('the categoryId:'+ ' ' + quizQuestions[0].categoryId+' '+'question: '+quizQuestions[0].question+' '+'Title: '+quizQuestions[0].title + ' ' + 'Answer:'+ ' ' + JSON.stringify(quizQuestions[0].answers));
       //console.log(quizQuestions[index]);
-      //console.log(quizQuestions[index].answers);
+      //console.log(quizQuestions[index].answers); 
 
       this.setState({
         question: quizQuestions[0].question,
         title: quizQuestions[0].title,
         fact: quizQuestions[0].fact,
-        answers: quizQuestions[0].answers[0],
+        answers: quizQuestions[0].answers,
         answer: quizQuestions[0].answers[0].answer,
         category: quizQuestions[0].category
       });
@@ -77,6 +73,8 @@ class App extends React.Component {
   forwardToQuiz() {
     this.props.history.push('/quiz');
     console.log(this.state.category);
+    console.log(this.state);
+
   }
 
   render() {
@@ -105,7 +103,6 @@ class App extends React.Component {
           />
           <Route path="/quiz" render={(props) =>
             <Quiz
-              isCurrent={this.state.isCurrent}
               answers={this.state.answers}
               answer={this.state.answer}
               answerOptions={this.state.answerOptions}

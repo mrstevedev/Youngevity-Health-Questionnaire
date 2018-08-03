@@ -39,8 +39,7 @@ export class Quiz extends React.Component {
                     <AnswerOption
                         //key={key.content}
                         //answerContent={key.content}
-                        //answerType={key.type}
-                        answer={this.props.answer}
+                        //answerType={key.type}                        
                         answers={this.props.answers}
                         questionId={this.props.questionId}
                         onAnswerSelected={this.props.onAnswerSelected}

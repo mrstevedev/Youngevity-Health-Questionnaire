@@ -40,7 +40,7 @@ export class ListView extends React.Component {
     // }
 
     render() {
-        const categories = ['Joints, Bones & Teeth', 'Metabolism', 'Brain & Heart Health', 'Digestion & Immunity', 'Additional Health Goals'];
+        const categories = ['Joints, Bones & Teeth', 'Metabolism & Energy', 'Brain & Heart Health', 'Digestion & Immunity', 'Additional Health Goals'];
         const newList = categories.map((category, i) => {
             return <li className="overview-list-item" key={i}>{category}</li>
         });
@@ -48,8 +48,8 @@ export class ListView extends React.Component {
         return (
             <div className="progress-categories-list">
                 <h3>Hi {sessionStorage.getItem('firstname')}!</h3>
-                <p>Here's what we'll be covering, and it should only take a few minutes:</p>
-                <ol>
+                <p className="list-view-text">Here's what we'll be covering, and it should only take a few minutes:</p>
+                <ol className="overview-list">
                     {newList}
                 </ol>
                 <div>

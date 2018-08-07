@@ -1,11 +1,7 @@
 import React from 'react';
-import LogoWhite from '../svg/logowhite.svg';
 import JointsBonesTeethIcon from '../svg/icon-joints.svg';
 
 export class SplashScreenJointsBonesTeeth extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount() {
         console.log('splash screen mounted');
@@ -16,7 +12,7 @@ export class SplashScreenJointsBonesTeeth extends React.Component {
         this.setState({
             firstname: sessionStorage.getItem('firstname'),
         });
-        console.log('you will be redirected to the quiz in 8 seconds');
+        console.log('you will be redirected to the quiz in 4 seconds');
         
         this.redirectToSplashScreen();
     }
@@ -25,7 +21,6 @@ export class SplashScreenJointsBonesTeeth extends React.Component {
         document.body.classList.remove('logodefault')
         document.body.classList.remove("background-joint-screen");
     }
-
 
     redirectToSplashScreen() {
         setTimeout(() => {

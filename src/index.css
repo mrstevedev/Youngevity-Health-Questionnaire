@@ -36,10 +36,10 @@ input{
   background-color: #EA6534;
 }
 
-/* .progress-dark-green {
-  
+.progress-dark-green {
+  background-color: #01A4AD;
 }
-.progress-light-green {
+/* .progress-light-green {
 
 }
 .progress-light-orange {
@@ -55,11 +55,11 @@ input{
 }
 
 .progress-steps li {
-  margin: 0px 8px;
+  margin: 0px -1px 0px 1.2em;
   padding: 0 0px;
   color: #cccccc;
   text-align: left;
-  width: 16%;
+  width: 17%;
 }
 
 .progress-steps li .active{
@@ -67,9 +67,6 @@ input{
 }
 
 /* End Progress Bar Component Styles */
-
-
-
 
 /* Animation */
 .fade-enter {

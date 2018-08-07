@@ -78,7 +78,7 @@ h3{
 }
 
 h4 {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   margin: 10px 0;
   letter-spacing: 2px;
@@ -197,7 +197,8 @@ h5{
 .background-nameform-screen{
   background:
     url('./images/nameformbglarge.png') no-repeat right bottom,
-    url('./images/nameformbgsmall.png') no-repeat left top;
+    url('./images/nameformbgsmall.png') no-repeat left top,
+    linear-gradient(#EFF2F2,#EFF2F2);
 }
 
 .background-joint-screen {
@@ -220,6 +221,71 @@ h5{
 /* End set Body Background */
 
 
+/* Nameform Styles */
+.nameform {
+  background: #fff;
+  padding: 5px 0;
+  border-radius: 6px;
+}
+/* End Nameform Styles */
+
+/* List view styles */
+
+.progress-categories-list{ margin: 50px 0; }
+
+.list-view-text{
+  font-size: 20px;
+  font-weight: 500;
+  padding: 20px 40px;
+  line-height: 24px;
+}
+
+.overview-list-item {
+  font-size: 17px;
+  font-weight: 200;
+  width: 72%;
+  margin: 0 auto;
+  text-align: left;
+  font-weight: 500;
+}
+
+ol.overview-list {
+  margin:0 0 1.5em;
+  padding:0;
+  counter-reset:item;
+}
+ 
+ol.overview-list>li.overview-list-item {
+  padding:15px 0 0 3em;
+  text-indent:-2em;
+  list-style-type:none;
+  counter-increment:item;
+}
+ 
+ol.overview-list>li.overview-list-item:before {
+  display:inline-block;
+  padding-right: .3em;
+  color:#fff;
+  text-align:right;
+  content:counter(item) ".";
+  font-weight: 200;
+}
+
+li.overview-list-item:before {
+  content: '';
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  position: relative;
+  left: -23px;
+  top: 0;
+  z-index: -1;
+  background: #EC6529;
+  border-radius: 100%;
+}
+
+/* End view styles */
+
 /* Quiz Questions Styles */
 
 .current {
@@ -234,15 +300,28 @@ h5{
 
 .questionsContainer {
     margin: 30px 0;
-    padding: 50px 35px 0 35px;
+    padding: 20px 35px 0 35px;
 }
 
 .questionsContainer p {
   font-size: 12px;
 }
 
+.question {
+  height: 140px;
+  display: flex;
+  align-items: center;
+}
+
+.fact {
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .title {
-  margin: 25px 0 15px 0;
+  margin: 10px 0 0 0;
 }
 
 .answersList{ 
@@ -272,35 +351,79 @@ h5{
   
 }
 
-.reallypoor {
+.really.poor {
   background: url('./svg/reallypoor.svg');
   
 }
-.reallypoor:focus {
+.really.poor.over {
   background: url('./svg/reallypoor-over.svg');
 }
 .poor {
   background: url('./svg/poor.svg');
 }
-.poor:focus {
+.poor.over {
   background: url('./svg/poor-over.svg');
 }
 .fair {
   background: url('./svg/fair.svg');
 }
-.fair:focus {
+.fair.over {
   background: url('./svg/fair-over.svg');
 }
 .good {
   background: url('./svg/good.svg');
 } 
-.good:focus {
+.good.over {
   background: url('./svg/good-over.svg');
 } 
 .great {
   background: url('./svg/great.svg');
 }
-.great:focus {
+.great.over {
   background: url('./svg/great-over.svg');
 }
+
+/* Animations */
+.animated {
+  -webkit-animation-duration: .95s;animation-duration: .95s;
+  -webkit-animation-fill-mode: both;animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+/* End Animations */
+
 /* End Quiz Questions Styles */
+
+
+/* List View Styles */
+
+/* End List View Styles */

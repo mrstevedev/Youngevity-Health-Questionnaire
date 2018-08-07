@@ -6,16 +6,12 @@ import AnswerOption from './AnswerOption';
 import { ProgressBar } from './ProgressBar';
 
 export class Quiz extends React.Component {
-    constructor(props) {
-        super(props);
-
-    }
 
     componentDidMount() {
         document.body.classList.add('logocolor');
     }
 
-    componentWillUnmount() { 
+    componentWillUnmount() {
         document.body.classList.remove('logodecolor');
     }
 
@@ -24,13 +20,14 @@ export class Quiz extends React.Component {
             <div className="quizContainer">
 
                 <ProgressBar
+                    percentage={this.props.percentage}
                     category={this.props.category}
-                    isCurrent={this.props.isCurrent}
+                    questionId={this.props.questionId}
                 />
 
                 <div className="questions">
 
-                    <div className="questionsContainer">
+                    <div id="questionsContainer" className="questionsContainer">
                         <Question content={this.props.question} />
                         <Title content={this.props.title} />
                         <Fact content={this.props.fact} />
@@ -39,7 +36,8 @@ export class Quiz extends React.Component {
                     <AnswerOption
                         //key={key.content}
                         //answerContent={key.content}
-                        //answerType={key.type}                        
+                        //answerType={key.type}
+                        name={this.props.name}
                         answers={this.props.answers}
                         questionId={this.props.questionId}
                         onAnswerSelected={this.props.onAnswerSelected}

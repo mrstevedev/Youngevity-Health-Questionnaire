@@ -6,6 +6,8 @@ import { Home } from './components/Home';
 import { NameForm } from "./components/NameForm";
 import { ListView } from './components/ListView';
 import { SplashScreenJointsBonesTeeth } from './components/SplashScreenJointsBonesTeeth';
+import { SplashScreenMetabolismEnergy } from './components/SplashScreenMetabolismEnergy';
+import { SplashScreenBrainHeartHealth } from './components/SplashScreenBrainHeartHealth';
 import Quiz from './components/Quiz';
 import Result from './components/Result'
 import quizQuestions from './api/quizQuestions';
@@ -18,23 +20,17 @@ class App extends React.Component {
 
     this.state = {
       percentage: 20,
+      categoryColor: 'progress-dark-orange',
       category: 'Joints & Bones',
       categoryTotals: 6,
-      counter: 1,
+      counter: null,
       questionId: 1,
+      categoryId: 1,
       question: null,
       title: null,
       fact: null,
-      answerOptions: [],
       answer: null,
       answers: null,
-      answersCount: {
-        reallypoor: 0,
-        poor: 0,
-        fair: 0,
-        great: 0,
-        good: 0
-      },
       result: null,
       firstname: null,
     };
@@ -46,6 +42,7 @@ class App extends React.Component {
     quizQuestions.map((question, index) => {
 
       this.setState({
+        categoryId: quizQuestions[0].categoryId,
         questionId: quizQuestions[0].questionId,
         question: quizQuestions[0].question,
         title: quizQuestions[0].title,
@@ -86,15 +83,38 @@ class App extends React.Component {
     }
   }
 
-  setUserAnswer(answer) {
-    console.log('Setting the UserAnswer to:' + ' ' + answer);
-    const updatedAnswersCount = update(this.state.answersCount, {
-      [answer]: { $apply: (currentValue) => currentValue + 1 }
+  repopulateStates(answer) {
+    console.log('Repopulate states with the current Question, Title, & Fact');
+    this.setState({
+      //question: sessionStorage.getItem('question')
     });
 
+  }
+
+  setUserAnswer(answer) {
+
+    // function to repopulate states based on sessionStorage for questions/answers
+
+    // check if answers extists in storage/state 
+    // if exists get current answers from storage
+    // append new answer to object
+    // if it doesnt exist create starting object
+    // check if questions exist 
+
+
+    if (this.state.answers) {
+      console.log('answers exists');
+      this.repopulateStates()
+    }
+
     this.setState({
-      answersCount: updatedAnswersCount,
-      answer: answer
+      answers: sessionStorage.setItem('answers', JSON.stringify({
+        categoryId: this.state.categoryId,
+        questionId: this.state.questionId,
+        question: this.state.question,
+        answer: answer,
+        firstname: sessionStorage.getItem('firstname')
+      }))
     });
   }
 
@@ -116,6 +136,9 @@ class App extends React.Component {
 
     this.setState({
       counter: counter,
+      category: quizQuestions[counter].category,
+      categoryColor: quizQuestions[counter].categoryColor,
+      questionId: quizQuestions[counter].questionId,
       question: quizQuestions[counter].question,
       title: quizQuestions[counter].title,
       fact: quizQuestions[counter].fact,
@@ -123,28 +146,52 @@ class App extends React.Component {
       answer: answerSelected
     });
 
-    if (counter === 6  ||
-        counter === 12 ||
-        counter === 18 ||
-        counter === 24 ||
-        counter === 28) {
-      
-      this.updateCategory();
-      
+    console.log(this.state);
+
+    if (counter === 6 ||
+      counter === 12 ||
+      counter === 18 ||
+      counter === 24 ||
+      counter === 28) {
+
+      this.updateCategory(counter);
+
       this.setState({ percentage: this.state.percentage + 20 })
     } else {
       console.log('category did not update');
     }
   }
 
-  updateCategory() {
-  
+  updateCategory(counter) {
+
+    if (counter === 6) {
+
+      console.log('go to splash screen');
+      this.props.history.push('/overview-list');
+
+    } else if (counter === 12) {
+
+      console.log('go to splash screen');
+      this.props.history.push('/overview-list');
+
+    } else if (counter === 24) {
+
+      console.log('go to splash screen');
+      this.props.history.push('./overview-list');
+
+    } else if (counter === 28) {
+
+      console.log('go to splash screen');
+      this.props.history.push('./overview-list');
+    }
+
     console.log('category got updated');
 
     this.setState({
-      category: 'Metabolism & Energy',
-      questionId: this.state.questionId + 1
+      category: this.state.category,
+      categoryId: this.state.categoryId + 1
     });
+
     console.log(this.state);
   }
 
@@ -159,8 +206,7 @@ class App extends React.Component {
     return answersCountKeys.filter((key) => answersCount[key] === maxAnswerCount);
   }
 
-  updateName(name) {
-    this.setState({ name: name });
+  updateName() {
     this.props.history.push('/overview-list');
   }
 
@@ -171,7 +217,6 @@ class App extends React.Component {
   forwardToQuiz() {
     this.props.history.push('/quiz');
     console.log(this.state);
-
   }
 
   renderResult() {
@@ -189,10 +234,11 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={HomeScreen} />
           <Route path="/whats-your-first-name" render={(props) => <NameForm updater={(name) => this.updateName(name)} />} />
-          <Route path="/overview-list" render={(props) => <ListView updater={(name) => this.forwardToSplash(name)} />} />
+          <Route path="/overview-list" render={(props) => <ListView firstname={this.state.firstname} counter={this.state.counter} updater={(name) => this.forwardToSplash(name)} />} />
           <Route path="/joints-bones-teeth" render={(props) => <SplashScreenJointsBonesTeeth updater={() => { this.forwardToQuiz() }} />} />
           <Route path="/quiz" render={(props) =>
             <Quiz
+              categoryColor={this.state.categoryColor}
               percentage={this.state.percentage}
               answers={this.state.answers}
               answer={this.state.answer}
@@ -206,6 +252,8 @@ class App extends React.Component {
               questionTotal={quizQuestions.length}
               onAnswerSelected={this.handleAnswerSelected}
             />} />
+
+          <Route path="/metabolism-energy" render={() => <SplashScreenMetabolismEnergy updater={() => { this.forwardToQuiz() }} />} />
         </Switch>
       </div>
     );

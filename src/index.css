@@ -17,9 +17,13 @@ input{
 }
 
 /* Progress Bar Component Styles */
+.current {
+  color: #707070!important;
+}
+
 .progress {
   border-radius: 10px;
-  height: 9px;
+  height: 7px;
   margin: 10px 0;
 
   -webkit-box-shadow: none;
@@ -39,12 +43,12 @@ input{
 .progress-dark-green {
   background-color: #01A4AD;
 }
-/* .progress-light-green {
-
+.progress-light-green {
+  background-color: #C0D546
 }
 .progress-light-orange {
-
-} */
+  background-color: #EF9A37;
+}
 
 .progress-steps ol {
   display: flex;
@@ -55,7 +59,7 @@ input{
 }
 
 .progress-steps li {
-  margin: 0px -1px 0px 1.2em;
+  margin: 0px 1px 0px 1.2em;
   padding: 0 0px;
   color: #cccccc;
   text-align: left;

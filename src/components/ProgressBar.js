@@ -15,7 +15,10 @@ export class ProgressBar extends React.Component {
         return (
             <div>
                 <div className="progress">
-                    <Filler percentage={this.props.percentage} />
+                    <Filler
+                        categoryColor={this.props.categoryColor}
+                        category={this.props.category}
+                        percentage={this.props.percentage} />
                 </div>
                 <div className="progress-steps">
                     <ol>

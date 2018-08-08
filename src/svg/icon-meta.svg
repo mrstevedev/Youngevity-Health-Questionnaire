@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 177.788 129.588">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Group_561" data-name="Group 561" transform="translate(0 -0.006)">
+    <rect id="Rectangle_1391" data-name="Rectangle 1391" class="cls-1" width="29.272" height="5.452" transform="translate(148.515 62.056)"/>
+    <rect id="Rectangle_1392" data-name="Rectangle 1392" class="cls-1" width="29.238" height="5.452" transform="translate(129.139 20.694) rotate(-45)"/>
+    <rect id="Rectangle_1393" data-name="Rectangle 1393" class="cls-1" width="5.452" height="29.238" transform="translate(24.101 3.861) rotate(-45)"/>
+    <rect id="Rectangle_1394" data-name="Rectangle 1394" class="cls-1" width="29.272" height="5.452" transform="translate(0 62.056)"/>
+    <rect id="Rectangle_1395" data-name="Rectangle 1395" class="cls-1" width="29.238" height="5.452" transform="translate(24.108 125.739) rotate(-45)"/>
+    <rect id="Rectangle_1404" data-name="Rectangle 1404" class="cls-1" width="29.238" height="5.452" transform="translate(115.963 105.065) rotate(45)"/>
+    <path id="Path_445" data-name="Path 445" class="cls-1" d="M217.216,60.328H176.728L193.916,23H151.588l-11.7,27.814,5,2.118L155.2,28.452h30.245L168.22,65.78h37.467l-47.433,57.5,8.924-39.308H131.795l5.452-12.917-5-2.118L123.6,89.393h36.773l-12.5,55.038Z" transform="translate(-80.681 -15.009)"/>
+  </g>
+</svg>

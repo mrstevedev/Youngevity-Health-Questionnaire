@@ -20,9 +20,10 @@ export class Quiz extends React.Component {
             <div className="quizContainer">
 
                 <ProgressBar
+                    categoryColor={this.props.categoryColor}
                     percentage={this.props.percentage}
                     category={this.props.category}
-                    questionId={this.props.questionId}
+                    categoryId={this.props.categoryId}
                 />
 
                 <div className="questions">

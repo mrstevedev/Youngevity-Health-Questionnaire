@@ -16,7 +16,7 @@ html{
 }
 
 .container {
-  max-width: 375px;
+  min-width: 375px;
   text-align: center;
 }
 
@@ -206,6 +206,11 @@ h5{
   linear-gradient(#EF8137, #EC6529);
 }
 
+.background-meta-screen {
+  background: url('./images/splashjointsbg.png') no-repeat 220px bottom,
+  linear-gradient(#40C2CD, #137F7F);
+}
+
 .background-enter-name-screen, {
   background: linear-gradient(#EF8137,#EC6529);
 }
@@ -222,7 +227,7 @@ h5{
 
 
 /* Nameform Styles */
-.nameform {
+.nameForm {
   background: #fff;
   padding: 5px 0;
   border-radius: 6px;
@@ -236,7 +241,7 @@ h5{
 .list-view-text{
   font-size: 20px;
   font-weight: 500;
-  padding: 20px 40px;
+  padding: 20px 50px;
   line-height: 24px;
 }
 
@@ -246,7 +251,7 @@ h5{
   width: 72%;
   margin: 0 auto;
   text-align: left;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 ol.overview-list {
@@ -264,12 +269,13 @@ ol.overview-list>li.overview-list-item {
  
 ol.overview-list>li.overview-list-item:before {
   display:inline-block;
-  padding-right: .3em;
+  padding-right: .4em;
   color:#fff;
   text-align:right;
-  content:counter(item) ".";
+  content:counter(item) "";
   font-weight: 200;
 }
+
 
 li.overview-list-item:before {
   content: '';
@@ -288,14 +294,10 @@ li.overview-list-item:before {
 
 /* Quiz Questions Styles */
 
-.current {
-  color: #707070!important;
-}
-
 .questions{
-  height: 60vh;
   background: #fff;
   border-radius: 10px;
+  padding: 0px 0 70px 0;
 }
 
 .questionsContainer {
@@ -311,6 +313,7 @@ li.overview-list-item:before {
   height: 140px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .fact {

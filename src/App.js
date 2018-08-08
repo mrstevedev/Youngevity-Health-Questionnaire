@@ -39,20 +39,38 @@ class App extends React.Component {
 
   componentDidMount() {
 
-    quizQuestions.map((question, index) => {
+    // if there are no answers in session Storage then display the first items from the looped array objects
+    if (!sessionStorage.getItem('answers')) {
+      quizQuestions.map((question, index) => {
 
+        this.setState({
+          categoryId: quizQuestions[0].categoryId,
+          questionId: quizQuestions[0].questionId,
+          question: quizQuestions[0].question,
+          title: quizQuestions[0].title,
+          fact: quizQuestions[0].fact,
+          answers: quizQuestions[0].answers,
+          category: quizQuestions[0].category,
+          firstname: sessionStorage.getItem('firstname')
+        });
+      });
+    } 
+    // Otherwise get the data that is stored and persist that data to the current view
+    else if (JSON.parse(sessionStorage.getItem('answers'))) {
       this.setState({
         categoryId: quizQuestions[0].categoryId,
         questionId: quizQuestions[0].questionId,
-        question: quizQuestions[0].question,
+        question: sessionStorage.answers.question,
         title: quizQuestions[0].title,
         fact: quizQuestions[0].fact,
         answers: quizQuestions[0].answers,
         category: quizQuestions[0].category,
-        firstname: sessionStorage.getItem('firstname'),
+        firstname: sessionStorage.getItem('firstname')
       });
-    });
+    }
+
     console.log(this.state);
+
   }
 
   handleAnswerSelected(event, answer) {
@@ -83,14 +101,6 @@ class App extends React.Component {
     }
   }
 
-  repopulateStates(answer) {
-    console.log('Repopulate states with the current Question, Title, & Fact');
-    this.setState({
-      //question: sessionStorage.getItem('question')
-    });
-
-  }
-
   setUserAnswer(answer) {
 
     // function to repopulate states based on sessionStorage for questions/answers
@@ -101,18 +111,15 @@ class App extends React.Component {
     // if it doesnt exist create starting object
     // check if questions exist 
 
-
-    if (this.state.answers) {
-      console.log('answers exists');
-      this.repopulateStates()
-    }
-
     this.setState({
       answers: sessionStorage.setItem('answers', JSON.stringify({
         categoryId: this.state.categoryId,
         questionId: this.state.questionId,
         question: this.state.question,
+        title: this.state.title,
+        fact: this.state.fact,
         answer: answer,
+        category: this.state.category,
         firstname: sessionStorage.getItem('firstname')
       }))
     });

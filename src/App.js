@@ -1,16 +1,15 @@
 import React from "react";
 import update from 'immutability-helper';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, browserHistory } from "react-router-dom";
 import { Header } from './components/Header';
 import { Home } from './components/Home';
 import { NameForm } from "./components/NameForm";
 import { ListView } from './components/ListView';
-import { SplashScreenJointsBonesTeeth } from './components/SplashScreenJointsBonesTeeth';
-import { SplashScreenMetabolismEnergy } from './components/SplashScreenMetabolismEnergy';
-import { SplashScreenBrainHeartHealth } from './components/SplashScreenBrainHeartHealth';
+import { CategoryScreen } from './components/CategoryScreen';
 import Quiz from './components/Quiz';
 import Result from './components/Result'
 import quizQuestions from './api/quizQuestions';
+import splashData from './api/splashData';
 import './App.css';
 
 class App extends React.Component {
@@ -20,9 +19,8 @@ class App extends React.Component {
 
     this.state = {
       percentage: 20,
-      categoryColor: 'progress-dark-orange',
+      progressColor: 'progress-dark-orange',
       category: 'Joints & Bones',
-      categoryTotals: 6,
       counter: null,
       questionId: 1,
       categoryId: 1,
@@ -33,6 +31,7 @@ class App extends React.Component {
       answers: null,
       result: null,
       firstname: null,
+      prevCategoryId: 0
     };
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this)
   }
@@ -41,7 +40,7 @@ class App extends React.Component {
 
     // if there are no answers in session Storage then display the first items from the looped array objects
     if (!sessionStorage.getItem('answers')) {
-      quizQuestions.map((question, index) => {
+      quizQuestions.map(() => {
 
         this.setState({
           categoryId: quizQuestions[0].categoryId,
@@ -51,26 +50,36 @@ class App extends React.Component {
           fact: quizQuestions[0].fact,
           answers: quizQuestions[0].answers,
           category: quizQuestions[0].category,
-          firstname: sessionStorage.getItem('firstname')
+          firstname: sessionStorage.getItem('firstname'),
+          choices: quizQuestions[0].choices
         });
-      });
-    } 
-    // Otherwise get the data that is stored and persist that data to the current view
-    else if (JSON.parse(sessionStorage.getItem('answers'))) {
-      this.setState({
-        categoryId: quizQuestions[0].categoryId,
-        questionId: quizQuestions[0].questionId,
-        question: sessionStorage.answers.question,
-        title: quizQuestions[0].title,
-        fact: quizQuestions[0].fact,
-        answers: quizQuestions[0].answers,
-        category: quizQuestions[0].category,
-        firstname: sessionStorage.getItem('firstname')
       });
     }
 
-    console.log(this.state);
+    else if (sessionStorage.getItem('answers')) {
+      let answerObj = JSON.parse(sessionStorage.getItem('answers'));
+      let currentQuestionID = answerObj.length;
+      let currentQuestionData = quizQuestions[currentQuestionID];
 
+      console.log('saved in storage: ' + currentQuestionID);
+      console.log('the current question data: ' + JSON.stringify(currentQuestionData));
+      console.log('state is: ' + JSON.stringify(this.state));
+
+      this.setState({
+        categoryId: currentQuestionData.categoryId,
+        questionId: currentQuestionData.questionId,
+        question: currentQuestionData.question,
+        title: currentQuestionData.title,
+        fact: currentQuestionData.fact,
+        answers: currentQuestionData.answers,
+        category: currentQuestionData.category,
+        counter: currentQuestionData.questionId - 1,
+        percentage: currentQuestionData.percentage,
+        progressColor: currentQuestionData.progressColor,
+        firstname: sessionStorage.getItem('firstname'),
+        choices: currentQuestionData.choices
+      });
+    }
   }
 
   handleAnswerSelected(event, answer) {
@@ -102,26 +111,39 @@ class App extends React.Component {
   }
 
   setUserAnswer(answer) {
+    // create answer object 
 
+    var answerObj = {
+      categoryId: this.state.categoryId,
+      questionId: this.state.questionId,
+      answer: answer,
+    };
     // function to repopulate states based on sessionStorage for questions/answers
 
     // check if answers extists in storage/state 
     // if exists get current answers from storage
-    // append new answer to object
+    if (sessionStorage.getItem('answers') !== null) {
+      var answers = JSON.parse(sessionStorage.getItem('answers'));
+    }
     // if it doesnt exist create starting object
+    else {
+      var answers = [answerObj];
+    }
     // check if questions exist 
-
+    for (var i = 0; i < answers.length; i++) {
+      //  if exists, overwrite current value
+      if (answers[i].questionId === this.state.questionId) {
+        answers[i].answer = answer;
+        break;
+      } else {
+        // push value into JSON object
+        // append new answer to object
+        answers.push(answerObj);
+        break;
+      }
+    }
     this.setState({
-      answers: sessionStorage.setItem('answers', JSON.stringify({
-        categoryId: this.state.categoryId,
-        questionId: this.state.questionId,
-        question: this.state.question,
-        title: this.state.title,
-        fact: this.state.fact,
-        answer: answer,
-        category: this.state.category,
-        firstname: sessionStorage.getItem('firstname')
-      }))
+      answers: sessionStorage.setItem('answers', JSON.stringify(answers))
     });
   }
 
@@ -144,13 +166,15 @@ class App extends React.Component {
     this.setState({
       counter: counter,
       category: quizQuestions[counter].category,
-      categoryColor: quizQuestions[counter].categoryColor,
+      categoryId: quizQuestions[counter].categoryId,
+      progressColor: quizQuestions[counter].progressColor,
       questionId: quizQuestions[counter].questionId,
       question: quizQuestions[counter].question,
       title: quizQuestions[counter].title,
       fact: quizQuestions[counter].fact,
       answerOptions: quizQuestions[counter].answers,
-      answer: answerSelected
+      answer: answerSelected,
+      prevCategoryId: quizQuestions[counter].categoryId - 1
     });
 
     console.log(this.state);
@@ -158,59 +182,34 @@ class App extends React.Component {
     if (counter === 6 ||
       counter === 12 ||
       counter === 18 ||
-      counter === 24 ||
-      counter === 28) {
+      counter === 24) {
 
-      this.updateCategory(counter);
-
-      this.setState({ percentage: this.state.percentage + 20 })
-    } else {
-      console.log('category did not update');
+      this.updateCategory();
     }
   }
 
-  updateCategory(counter) {
-
-    if (counter === 6) {
-
-      console.log('go to splash screen');
-      this.props.history.push('/overview-list');
-
-    } else if (counter === 12) {
-
-      console.log('go to splash screen');
-      this.props.history.push('/overview-list');
-
-    } else if (counter === 24) {
-
-      console.log('go to splash screen');
-      this.props.history.push('./overview-list');
-
-    } else if (counter === 28) {
-
-      console.log('go to splash screen');
-      this.props.history.push('./overview-list');
-    }
-
-    console.log('category got updated');
+  updateCategory() {
 
     this.setState({
       category: this.state.category,
-      categoryId: this.state.categoryId + 1
+      percentage: this.state.percentage + 20,
     });
-
+    console.log('checking current state within updateCategory()');
     console.log(this.state);
+    if (this.state.categoryId === 5) {
+      this.setState({
+        lastCategory: this.state.categoryId
+      });
+    }
+
+    // if the current categories Id is now greater than it previously was
+    if (this.state.categoryId > this.state.prevCategoryId) {
+      this.props.history.push('/overview-list');
+    }
   }
 
   getResults() {
     console.log('getResults() ran');
-
-    const answersCount = this.state.answersCount;
-    const answersCountKeys = Object.keys(answersCount);
-    const answersCountValues = answersCountKeys.map((key) => answersCount[key]);
-    const maxAnswerCount = Math.max.apply(null, answersCountValues);
-
-    return answersCountKeys.filter((key) => answersCount[key] === maxAnswerCount);
   }
 
   updateName() {
@@ -218,12 +217,19 @@ class App extends React.Component {
   }
 
   forwardToSplash() {
-    this.props.history.push('/joints-bones-teeth');
+    console.log(this.state)
+    if (this.state.categoryId > this.state.prevCategoryId) {
+      this.props.history.push(`/${this.state.category}`);
+    }
   }
 
   forwardToQuiz() {
     this.props.history.push('/quiz');
     console.log(this.state);
+  }
+
+  onPrevQuestion() {
+    console.log('previous question selected');
   }
 
   renderResult() {
@@ -240,27 +246,43 @@ class App extends React.Component {
 
         <Switch>
           <Route exact path="/" component={HomeScreen} />
-          <Route path="/whats-your-first-name" render={(props) => <NameForm updater={(name) => this.updateName(name)} />} />
-          <Route path="/overview-list" render={(props) => <ListView firstname={this.state.firstname} counter={this.state.counter} updater={(name) => this.forwardToSplash(name)} />} />
-          <Route path="/joints-bones-teeth" render={(props) => <SplashScreenJointsBonesTeeth updater={() => { this.forwardToQuiz() }} />} />
+          <Route path="/whats-your-first-name" render={(props) =>
+            <NameForm updater={(name) => this.updateName(name)} />}
+          />
+          <Route path="/overview-list" render={(props) =>
+            <ListView
+              categoryId={this.state.categoryId}
+              firstname={this.state.firstname}
+              counter={this.state.counter}
+              updater={(name) => this.forwardToSplash(name)} />}
+          />
+          <Route
+            path={`/${this.state.category}`}
+            render={(props) =>
+              <CategoryScreen
+                categoryId={this.state.categoryId}
+                updater={() => { this.forwardToQuiz() }} />}
+          />
           <Route path="/quiz" render={(props) =>
             <Quiz
-              categoryColor={this.state.categoryColor}
+              lastCategory={this.state.lastCategory}
+              categoryId={this.state.categoryId}
+              category={this.state.category}
+              questionId={this.state.questionId}
+              question={this.state.question}
+              onPrevQuestion={this.state.onPrevQuestion}
+              progressColor={this.state.progressColor}
               percentage={this.state.percentage}
               answers={this.state.answers}
               answer={this.state.answer}
               answerOptions={this.state.answerOptions}
-              category={this.state.category}
-              questionId={this.state.questionId}
-              question={this.state.question}
               title={this.state.title}
               fact={this.state.fact}
               name={this.state.name}
               questionTotal={quizQuestions.length}
               onAnswerSelected={this.handleAnswerSelected}
+              onClick={() => this.onPrevQuestion}
             />} />
-
-          <Route path="/metabolism-energy" render={() => <SplashScreenMetabolismEnergy updater={() => { this.forwardToQuiz() }} />} />
         </Switch>
       </div>
     );

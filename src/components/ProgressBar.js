@@ -8,15 +8,15 @@ export class ProgressBar extends React.Component {
 
         const ProgressCategories = ['Joints & Bones', 'Metabolism & Energy', 'Brain & Heart Health', 'Digestion & Immunity', 'Additional Health Goals'];
 
-        const ProgressList = ProgressCategories.map((category, index) => {
-            return <li key={index} className={`${category} ${this.props.category === category ? 'current' : ''}`}>{category}</li>;
+        const ProgressList = ProgressCategories.map((currCategory, index) => {
+            return <li key={index} className={`${currCategory} ${this.props.category === currCategory ? 'current' : ''}`}>{currCategory}</li>;
         });
 
         return (
             <div>
                 <div className="progress">
                     <Filler
-                        categoryColor={this.props.categoryColor}
+                        progressColor={this.props.progressColor}
                         category={this.props.category}
                         percentage={this.props.percentage} />
                 </div>

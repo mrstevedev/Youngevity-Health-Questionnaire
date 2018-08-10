@@ -62,7 +62,13 @@ h1,h2,h3,h4,h5 {
   margin:0;
   text-transform: uppercase
 }
+.background-start-screen h1,
+.background-start-screen h3, 
+.background-start-screen h5, 
+.background-start-screen p{
+  color: #fff;
 
+}
 h1{
   font-size: 30px;
 }
@@ -168,6 +174,7 @@ h5{
 
 .splashIcon {
   width:122.22px;
+  margin: 15px 0;
 }
 
 .splashText {
@@ -180,6 +187,14 @@ h5{
 .sub-container.splash {
   width: 84%;
 }
+
+.back a {
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+
 
 /* End splash screen styles */
 
@@ -209,6 +224,21 @@ h5{
 .background-meta-screen {
   background: url('./images/splashjointsbg.png') no-repeat 220px bottom,
   linear-gradient(#40C2CD, #137F7F);
+}
+
+.background-heart-screen {
+  background: url('./images/splashjointsbg.png') no-repeat 220px bottom,
+  linear-gradient(#C0D546, #9AB11A);
+}
+
+.background-digest-screen {
+  background: url('./images/splashjointsbg.png') no-repeat 220px bottom,
+  linear-gradient(#EF9A37, #EF8912);
+}
+
+.background-more-screen {
+  background: url('./images/splashjointsbg.png') no-repeat 220px bottom,
+  linear-gradient(#F2AD1F, #E89E06);
 }
 
 .background-enter-name-screen, {
@@ -386,6 +416,10 @@ li.overview-list-item:before {
   background: url('./svg/great-over.svg');
 }
 
+.goBackBtn {
+  margin: 25px 0;
+}
+
 /* Animations */
 .animated {
   -webkit-animation-duration: .95s;animation-duration: .95s;
@@ -430,3 +464,21 @@ li.overview-list-item:before {
 /* List View Styles */
 
 /* End List View Styles */
+
+/* Last category styles */
+.newCategoryList {
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.newCategoryList > a {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-basis: calc(50% - 40px);
+}
+
+a.newCatFive {
+  padding: 25px;
+}
+/* End last category styles */

@@ -1,9 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Questions from '../api/quizQuestions';
+import PropTypes from 'prop-types';
 
-class AnswerOption extends React.Component {
-    
+export class RadioGroup extends React.Component {
     render() {
 
         const Answers = Questions.slice(0, 5).map((answer, i) => {
@@ -29,9 +28,9 @@ class AnswerOption extends React.Component {
     }
 }
 
-AnswerOption.propTypes = {
+RadioGroup.propTypes = {
     answerType: PropTypes.string,
     onAnswerSelected: PropTypes.func.isRequired
 }
 
-export default AnswerOption;
+export default RadioGroup;

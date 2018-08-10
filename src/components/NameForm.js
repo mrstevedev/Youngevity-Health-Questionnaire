@@ -41,7 +41,6 @@ export class NameForm extends React.Component {
 
     saveToLocal() {
         sessionStorage.setItem('firstname', this.state.firstname);
-        console.log(this.state.firstname);
     }
 
     render() {

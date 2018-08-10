@@ -4,6 +4,7 @@ import { Button } from './Button';
 export class Home extends React.Component {
 
     componentDidMount() {
+        sessionStorage.clear();
         document.body.classList.add("logodefault");
         document.body.classList.add("background-start-screen");
     }

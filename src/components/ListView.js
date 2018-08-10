@@ -12,35 +12,34 @@ export class ListView extends React.Component {
 
     componentDidMount() {
         document.body.classList.add("logocolor");
-
-        if (this.props.counter === null) {
+        console.log('categoryId: '+this.props.categoryId);
+        if (this.props.categoryId === 1) {
             this.setState({
                 message: `Here’s what we’ll be covering, and it should only take a few minutes:`
             })
-        } else if (this.props.counter === 6) {
+        } else if (this.props.categoryId === 2) {
             this.setState({
-                message: `Nice work, ${sessionStorage.getItem('firstname')}! Section 1 is complete.`
+                message: `Nice work, ${sessionStorage.getItem('firstname')}! Section ${ this.props.categoryId -1 } is complete.`
             });
-        } else if (this.props.counter === 12) {
+        } else if (this.props.categoryId === 3) {
             this.setState({
-                message: `You’re on a roll, ${sessionStorage.getItem('firstname')}! Section 2 is complete.`
+                message: `You’re on a roll, ${sessionStorage.getItem('firstname')}! Section ${ this.props.categoryId -1 } is complete.`
             });
-        } else if (this.props.counter === 18) {
+        } else if (this.props.categoryId === 4) {
             this.setState({
-                message: `You’re on a roll, ${sessionStorage.getItem('firstname')}! Section 3 is complete.`
+                message: `You’re on a roll, ${sessionStorage.getItem('firstname')}! Section ${ this.props.categoryId -1 } is complete.`
             });
-        } else if (this.props.counter === 24) {
+        } else if (this.props.categoryId === 5) {
             this.setState({
-                message: 'Almost finished! Section 4 is complete.'
+                message: `Almost finished! Section ${ this.props.categoryId -1 } is complete.`
             });
-        } else if (this.props.counter === 28) {
+        } else if (this.props.categoryId === 6) {
             this.setState({
                 message: 'Woo hoo - you did it!'
             })
         }
 
-        console.log(sessionStorage.getItem('firstname'));
-        console.log('you will be redirected to begin the quiz in 8 seconds');
+        console.log('you will be redirected to splash view in 8 seconds');
 
         this.setState({
             firstname: sessionStorage.getItem('firstname'),
@@ -54,8 +53,8 @@ export class ListView extends React.Component {
 
     redirectToSplashScreen() {
         setTimeout(() => {
-            this.props.updater(this.state);
-        }, 9000);
+            this.props.updater(this.state.counter);
+        }, 1000);
     }
 
     render() {

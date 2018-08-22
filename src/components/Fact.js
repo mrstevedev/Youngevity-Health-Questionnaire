@@ -1,11 +1,15 @@
 import React from 'react';
 
 function Fact(props) {
-    return (
-        <div className="fact">
-            <p>{props.content}</p>
-        </div>
-    )
+    if (props.categoryId < 5) {
+        return (
+            <div className="fact">
+                <p>{props.content}</p>
+            </div>
+        )
+    } else return (
+        null
+    );
 }
 
 export default Fact;

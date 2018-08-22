@@ -94,6 +94,8 @@ h5{
   font-size: 13px;
   font-weight: 500;
   color: #464646;
+  margin: 20px 0;
+  text-transform: initial;
 }
 
 .large-headline{
@@ -129,6 +131,13 @@ h5{
 }
 
 /* End styles from YGY UI Library */
+
+
+/* Home view Styles */
+.introduction p {
+  line-height: 18px;
+}
+/* End Home View Styles */
 
 /* Get Started View Styles */
 
@@ -193,8 +202,6 @@ h5{
   font-weight: 500;
   font-size: 14px;
 }
-
-
 
 /* End splash screen styles */
 
@@ -420,6 +427,11 @@ li.overview-list-item:before {
   margin: 25px 0;
 }
 
+.goBackBtn a {
+  color: #01A4AD;
+  font-weight: 500
+}
+
 /* Animations */
 .animated {
   -webkit-animation-duration: .95s;animation-duration: .95s;
@@ -471,14 +483,63 @@ li.overview-list-item:before {
   flex-direction: row;
 }
 
-.newCategoryList > a {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  flex-basis: calc(50% - 40px);
+@media(max-width: 480px){
+
+  .newCategoryList > a {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-basis: calc(50% - 40px);
+  }
 }
 
 a.newCatFive {
-  padding: 25px;
+  width:117px;
+  height:117px;
+  margin: 0px 0 15px 0;
+}
+
+.category-5-btns a {
+  padding: 10px;
+  display:inline-block;
+  margin: 15px 6px;
+  width: 46%;
+}
+
+.category-5-btns .prevBtn {
+  border: solid 1px #EC6529;
+  color: #EC6529;
+}
+
+.category-5-btns .nextBtn {
+  background:#EC6529;
+  color: #FFF
+}
+
+.qId-25 {
+  background: url(./svg/weight_loss.svg) no-repeat;
+}
+.qId-26 {
+  background: url(./svg/building_muscle.svg) no-repeat;
+}
+.qId-27 {
+  background: url(./svg/exercise_performance.svg) no-repeat;
+}
+.qId-28 {
+  background: url(./svg/energy.svg) no-repeat;
+}
+
+
+.qId-25.active {
+  background: url(./svg/weight_loss_over.svg) no-repeat;
+}
+.qId-26.active {
+  background: url(./svg/building_muscle_over.svg) no-repeat;
+}
+.qId-27.active {
+  background: url(./svg/exercise_performance_over.svg) no-repeat;
+}
+.qId-28.active {
+  background: url(./svg/energy_over.svg) no-repeat;
 }
 /* End last category styles */

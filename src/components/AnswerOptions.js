@@ -15,7 +15,9 @@ class AnswerOptions extends React.Component {
     render() {
 
         if (this.props.categoryId > 4) {
-            return <CategoryAnswers onAnswerSelected={this.props.onAnswerSelected}
+            return <CategoryAnswers 
+                onStickySelect={this.props.onStickySelect}
+                onAnswerSelected={this.props.onAnswerSelected}
             />
         } else
             return <RadioGroup

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117 117">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #ccc;
+      }
+
+      .cls-2 {
+        fill: #707070;
+        font-size: 10px;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+      }
+
+      .cls-3, .cls-5 {
+        fill: none;
+      }
+
+      .cls-3 {
+        stroke: #ec6529;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 22.926;
+        stroke-width: 2px;
+        fill-rule: evenodd;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_1006" data-name="Group 1006" transform="translate(-199 -293)">
+    <g id="Group_639" data-name="Group 639" transform="translate(-8 -24)">
+      <g id="Rectangle_1410" data-name="Rectangle 1410" class="cls-1" transform="translate(207 317)">
+        <rect class="cls-4" width="117" height="117" rx="5"/>
+        <rect class="cls-5" x="0.5" y="0.5" width="116" height="116" rx="4.5"/>
+      </g>
+      <text id="NUTRIENT-_DENSE_WHOLE_FOODS" data-name="NUTRIENT- DENSE WHOLE FOODS" class="cls-2" transform="translate(218 380.938)"><tspan x="15.238" y="10">NUTRIENT- </tspan><tspan x="3.898" y="24">DENSE WHOLE </tspan><tspan x="27.373" y="38">FOODS</tspan></text>
+    </g>
+    <g id="Group_687" data-name="Group 687" transform="translate(228.7 301.8)">
+      <path id="Path_583" data-name="Path 583" class="cls-3" d="M29,56.912H39.89l4.56-16.334A6.837,6.837,0,0,1,40.843,38.4L37.78,48.541,36.623,40.1a6.757,6.757,0,0,1-2.042.34,6.856,6.856,0,0,1-2.927-.681l-.408,8.167-3.2-7.146a6.691,6.691,0,0,1-3.811,1.225H24.1Z" transform="translate(-7.283 -11.882)"/>
+      <path id="Path_584" data-name="Path 584" class="cls-3" d="M10.828,7.734a3.314,3.314,0,0,1,.817.068,9.631,9.631,0,0,1,9.12-6.6,9.487,9.487,0,0,1,8.371,4.968,10.393,10.393,0,0,1,6.057-1.974,10.17,10.17,0,0,1,9.528,6.534,6.437,6.437,0,0,1,5.853,6.4,6.785,6.785,0,0,1-.749,3.063,6.257,6.257,0,0,1,1.906,4.628,6.477,6.477,0,0,1-11.706,3.811,5.669,5.669,0,0,1-1.5.2,6.46,6.46,0,0,1-5.717-3.471A6.43,6.43,0,0,1,27.3,28.492a6.312,6.312,0,0,1-4.628-1.974,6.473,6.473,0,0,1-5.717,3.539,6.408,6.408,0,0,1-5.377-2.927,6.281,6.281,0,0,1-3.811,1.293A6.463,6.463,0,0,1,1.3,21.958a6.541,6.541,0,0,1,3.471-5.717,6.441,6.441,0,0,1,6.057-8.507Z"/>
+      <path id="Path_585" data-name="Path 585" class="cls-3" d="M11.489,21.185a3.3,3.3,0,0,1-1.089-2.45A3.34,3.34,0,0,1,13.735,15.4" transform="translate(-2.907 -4.536)"/>
+      <path id="Path_586" data-name="Path 586" class="cls-3" d="M20.4,12.266A6.463,6.463,0,0,1,26.866,5.8,6.355,6.355,0,0,1,31.9,8.25" transform="translate(-6.101 -1.469)"/>
+      <path id="Path_587" data-name="Path 587" class="cls-3" d="M40.668,18.027c0-.2-.068-.476-.068-.681a7.146,7.146,0,1,1,14.292,0" transform="translate(-12.553 -2.875)"/>
+      <path id="Path_588" data-name="Path 588" class="cls-3" d="M9.135,33.757A3.325,3.325,0,0,1,7.229,27.7" transform="translate(-1.437 -8.464)"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117 117">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #ccc;
+      }
+
+      .cls-2 {
+        fill: #707070;
+        font-size: 10px;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+      }
+
+      .cls-3, .cls-6 {
+        fill: #ec6529;
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-6 {
+        stroke: #ec6529;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-3 {
+        stroke-width: 2px;
+      }
+
+      .cls-3, .cls-4 {
+        fill-rule: evenodd;
+      }
+
+      .cls-4, .cls-5, .cls-8 {
+        fill: none;
+      }
+
+      .cls-4, .cls-5 {
+        stroke-width: 2.5px;
+      }
+
+      .cls-6 {
+        stroke-width: 0.5px;
+      }
+
+      .cls-7 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_641" data-name="Group 641" transform="translate(-50 -456)">
+    <g id="Rectangle_1411" data-name="Rectangle 1411" class="cls-1" transform="translate(50 456)">
+      <rect class="cls-7" width="117" height="117" rx="5"/>
+      <rect class="cls-8" x="0.5" y="0.5" width="116" height="116" rx="4.5"/>
+    </g>
+    <text id="ANTI-AGING_NEEDS" data-name="ANTI-AGING
+NEEDS" class="cls-2" transform="translate(59 529.938)"><tspan x="12.888" y="10">ANTI-AGING</tspan><tspan x="28.708" y="24">NEEDS</tspan></text>
+    <g id="Group_686" data-name="Group 686" transform="translate(83.8 469.7)">
+      <path id="Path_579" data-name="Path 579" class="cls-3" d="M6.6,10.637l5.029-.366L7.057,5.7Z" transform="translate(-0.548 -0.377)"/>
+      <path id="Path_580" data-name="Path 580" class="cls-4" d="M8.9,8.066A23.275,23.275,0,0,1,48.582,24.524,23.516,23.516,0,0,1,35.05,45.645C30.3,47.84,24.261,48.571,19.232,46.834" transform="translate(-0.745 0)"/>
+      <path id="Path_581" data-name="Path 581" class="cls-5" d="M26.055,11.6V28.241L11.7,35.647" transform="translate(-0.985 -0.882)"/>
+      <g id="Group_685" data-name="Group 685" transform="translate(0.2 13.24)">
+        <g id="Group_684" data-name="Group 684">
+          <path id="Path_582" data-name="Path 582" class="cls-6" d="M13.458,47.13A.824.824,0,0,1,13,47.038a23.422,23.422,0,0,1-4.389-3.017A.907.907,0,1,1,9.8,42.649a29.2,29.2,0,0,0,4.023,2.834.925.925,0,0,1,.366,1.28C14.1,47.038,13.732,47.13,13.458,47.13ZM5.686,40.546a.832.832,0,0,1-.731-.366A25.764,25.764,0,0,1,2.3,35.609a.9.9,0,0,1,1.646-.731c.731,1.372,1.554,2.834,2.469,4.206a.983.983,0,0,1-.183,1.28A.98.98,0,0,1,5.686,40.546ZM1.571,31.22a.89.89,0,0,1-.914-.731A26.857,26.857,0,0,1,.2,25.826v-.64a.914.914,0,1,1,1.829,0v.549a22.093,22.093,0,0,0,.457,4.3.926.926,0,0,1-.731,1.1C1.754,31.22,1.663,31.22,1.571,31.22ZM1.846,20.98H1.663a.868.868,0,0,1-.64-1.1,33.076,33.076,0,0,1,1.829-5.029.826.826,0,0,1,1.189-.366.826.826,0,0,1,.366,1.189,27.652,27.652,0,0,0-1.737,4.572A.747.747,0,0,1,1.846,20.98Z" transform="translate(-0.2 -14.359)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

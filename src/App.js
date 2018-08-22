@@ -20,20 +20,23 @@ class App extends React.Component {
     this.state = {
       percentage: 20,
       progressColor: 'progress-dark-orange',
-      category: 'Joints & Bones',
+      category: null,
       counter: null,
       questionId: 1,
       categoryId: 1,
+      prevCategoryId: null,
       question: null,
       title: null,
       fact: null,
       answer: null,
       answers: null,
       result: null,
-      firstname: null,
-      prevCategoryId: 0
+      firstname: null
     };
-    this.handleAnswerSelected = this.handleAnswerSelected.bind(this)
+
+    this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
+    this.handleStickySelect = this.handleStickySelect.bind(this);
+    this.setPrevQuestion = this.setPrevQuestion.bind(this);
   }
 
   componentDidMount() {
@@ -49,7 +52,7 @@ class App extends React.Component {
           title: quizQuestions[0].title,
           fact: quizQuestions[0].fact,
           answers: quizQuestions[0].answers,
-          category: quizQuestions[0].category,
+          category: quizQuestions[0].category.replace(/\s+/g, '-'),
           firstname: sessionStorage.getItem('firstname'),
           choices: quizQuestions[0].choices
         });
@@ -72,14 +75,29 @@ class App extends React.Component {
         title: currentQuestionData.title,
         fact: currentQuestionData.fact,
         answers: currentQuestionData.answers,
-        category: currentQuestionData.category,
+        category: currentQuestionData.category.replace(/\s+/g, '-'),
         counter: currentQuestionData.questionId - 1,
+        prevCategoryId: currentQuestionData.categoryId - 1,
         percentage: currentQuestionData.percentage,
         progressColor: currentQuestionData.progressColor,
         firstname: sessionStorage.getItem('firstname'),
         choices: currentQuestionData.choices
       });
     }
+  }
+
+  handleStickySelect(event, answer) {
+
+    // add a class an add an active state to append over states
+    event.currentTarget.classList.toggle('active');
+
+    // grab the active pseudo active class and pass it along
+
+    console.log(event.currentTarget.classList[2] === 'active');
+
+    // if(event.currentTarget.classList[2] === 'active') {
+    //   this.setUserAnswer(answer);
+    // } 
   }
 
   handleAnswerSelected(event, answer) {
@@ -116,7 +134,7 @@ class App extends React.Component {
     var answerObj = {
       categoryId: this.state.categoryId,
       questionId: this.state.questionId,
-      answer: answer,
+      answer: answer
     };
     // function to repopulate states based on sessionStorage for questions/answers
 
@@ -147,6 +165,41 @@ class App extends React.Component {
     });
   }
 
+  setPrevQuestion(questionId) {
+    // this method handles the Go Back link
+    const counter = this.state.counter - 1;
+
+    this.setState({
+      counter: counter,
+      category: quizQuestions[counter].category.replace(/\s+/g, '-'),
+      categoryId: quizQuestions[counter].categoryId,
+      progressColor: quizQuestions[counter].progressColor,
+      questionId: quizQuestions[counter].questionId,
+      question: quizQuestions[counter].question,
+      title: quizQuestions[counter].title,
+      fact: quizQuestions[counter].fact,
+      answers: quizQuestions[counter].answers,
+    });
+
+    if (counter === 5 ||
+      counter === 11 ||
+      counter === 17 ||
+      counter === 23) {
+
+      this.setState({
+        percentage: this.state.percentage - 20,
+      });
+    }
+
+    console.log(this.state);
+
+
+    // if the current categories Id is now greater than it previously was
+    if (this.state.categoryId < this.state.prevCategoryId) {
+      console.log('previous category yo');
+    }
+  }
+
   setNextQuestion(answerSelected) {
 
     let questionsContainer = document.getElementById('questionsContainer');
@@ -165,16 +218,17 @@ class App extends React.Component {
 
     this.setState({
       counter: counter,
-      category: quizQuestions[counter].category,
+      category: quizQuestions[counter].category.replace(/\s+/g, '-'),
       categoryId: quizQuestions[counter].categoryId,
       progressColor: quizQuestions[counter].progressColor,
       questionId: quizQuestions[counter].questionId,
       question: quizQuestions[counter].question,
       title: quizQuestions[counter].title,
       fact: quizQuestions[counter].fact,
-      answerOptions: quizQuestions[counter].answers,
+      answers: quizQuestions[counter].answers,
       answer: answerSelected,
-      prevCategoryId: quizQuestions[counter].categoryId - 1
+      percentage: this.state.percentage,
+      prevCategoryId: quizQuestions[counter].categoryId - 1,
     });
 
     console.log(this.state);
@@ -191,7 +245,7 @@ class App extends React.Component {
   updateCategory() {
 
     this.setState({
-      category: this.state.category,
+      category: this.state.category.replace(/\s+/g, '-'),
       percentage: this.state.percentage + 20,
     });
     console.log('checking current state within updateCategory()');
@@ -226,10 +280,6 @@ class App extends React.Component {
   forwardToQuiz() {
     this.props.history.push('/quiz');
     console.log(this.state);
-  }
-
-  onPrevQuestion() {
-    console.log('previous question selected');
   }
 
   renderResult() {
@@ -270,7 +320,6 @@ class App extends React.Component {
               category={this.state.category}
               questionId={this.state.questionId}
               question={this.state.question}
-              onPrevQuestion={this.state.onPrevQuestion}
               progressColor={this.state.progressColor}
               percentage={this.state.percentage}
               answers={this.state.answers}
@@ -281,7 +330,8 @@ class App extends React.Component {
               name={this.state.name}
               questionTotal={quizQuestions.length}
               onAnswerSelected={this.handleAnswerSelected}
-              onClick={() => this.onPrevQuestion}
+              onStickySelect={this.handleStickySelect}
+              onPrevQuestion={this.setPrevQuestion}
             />} />
         </Switch>
       </div>

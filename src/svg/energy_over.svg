@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117 117">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ec6529;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-size: 10px;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="Group_1003" data-name="Group 1003" transform="translate(-200 -308)">
+    <g id="Group_1005" data-name="Group 1005" transform="translate(140)">
+      <g id="Group_1004" data-name="Group 1004">
+        <g id="Group_633" data-name="Group 633" transform="translate(10 -8)">
+          <rect id="Rectangle_1409" data-name="Rectangle 1409" class="cls-1" width="117" height="117" rx="5" transform="translate(50 316)"/>
+          <text id="ENERGY" class="cls-2" transform="translate(59 397.938)"><tspan x="24.513" y="10">ENERGY</tspan></text>
+        </g>
+      </g>
+      <path id="Path_552" data-name="Path 552" class="cls-3" d="M7,22.878,20.675,36.553,50.229,7" transform="translate(91.854 331.247)"/>
+    </g>
+  </g>
+</svg>

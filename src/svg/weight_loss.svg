@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117 117">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #ccc;
+      }
+
+      .cls-2 {
+        fill: #707070;
+        font-size: 10px;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+      }
+
+      .cls-3 {
+        fill: #ec6529;
+      }
+
+      .cls-4 {
+        stroke: #ec6529;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+        stroke-width: 1.75px;
+      }
+
+      .cls-5 {
+        stroke: none;
+      }
+
+      .cls-6 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_1003" data-name="Group 1003" transform="translate(-50 -317)">
+    <g id="Rectangle_1409" data-name="Rectangle 1409" class="cls-1" transform="translate(50 317)">
+      <rect class="cls-5" width="117" height="117" rx="5"/>
+      <rect class="cls-6" x="0.5" y="0.5" width="116" height="116" rx="4.5"/>
+    </g>
+    <text id="WEIGHT_LOSS" data-name="WEIGHT LOSS" class="cls-2" transform="translate(75 394.938)"><tspan x="9.703" y="10">WEIGHT </tspan><tspan x="18.653" y="24">LOSS</tspan></text>
+    <g id="Group_689" data-name="Group 689" transform="translate(94 334)">
+      <g id="Group_688" data-name="Group 688" transform="translate(-9)">
+        <path id="Path_589" data-name="Path 589" class="cls-3" d="M42.352,0H4.121A4.113,4.113,0,0,0,0,4.121V45.649A4.113,4.113,0,0,0,4.121,49.77H42.288a4.113,4.113,0,0,0,4.121-4.121V4.121A4.02,4.02,0,0,0,42.352,0ZM22.381,48.122H4.121a2.476,2.476,0,0,1-2.473-2.473V4.121A2.476,2.476,0,0,1,4.121,1.648H42.288a2.476,2.476,0,0,1,2.473,2.473V45.649a2.476,2.476,0,0,1-2.473,2.473h-18.2"/>
+        <path id="Path_590" data-name="Path 590" class="cls-3" d="M29.427,5.2C22.579,5.2,17,10.018,17,15.978a.839.839,0,0,0,.824.824H41.092a.839.839,0,0,0,.824-.824C41.917,10.082,36.337,5.2,29.427,5.2ZM18.712,15.154c.507-4.628,5.135-8.306,10.715-8.306S39.7,10.526,40.141,15.154Z" transform="translate(-6.222 -1.903)"/>
+        <path id="Path_591" data-name="Path 591" class="cls-3" d="M39.107,11.618c-1.2.761-3.3,2.092-3.677,2.473a1.629,1.629,0,0,0,.063,2.346,1.607,1.607,0,0,0,2.282,0,39.1,39.1,0,0,0,2.473-3.677.826.826,0,0,0-.254-1.141A.762.762,0,0,0,39.107,11.618Z" transform="translate(-12.796 -4.2)"/>
+      </g>
+      <line id="Line_130" data-name="Line 130" class="cls-4" y2="28.15" transform="translate(14.141 20.542)"/>
+    </g>
+  </g>
+</svg>

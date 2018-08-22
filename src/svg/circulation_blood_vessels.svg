@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117 123.938">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #ccc;
+      }
+
+      .cls-2 {
+        fill: #707070;
+        font-size: 10px;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+      }
+
+      .cls-3, .cls-4, .cls-7 {
+        fill: none;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        stroke: #ec6529;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .cls-4, .cls-5 {
+        fill-rule: evenodd;
+      }
+
+      .cls-5 {
+        fill: #ec6529;
+      }
+
+      .cls-6 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_1008" data-name="Group 1008" transform="translate(-60 -293)">
+    <g id="Group_646" data-name="Group 646" transform="translate(10 -24)">
+      <g id="Rectangle_1409" data-name="Rectangle 1409" class="cls-1" transform="translate(50 317)">
+        <rect class="cls-6" width="117" height="117" rx="5"/>
+        <rect class="cls-7" x="0.5" y="0.5" width="116" height="116" rx="4.5"/>
+      </g>
+      <text id="CIRCULATION_BLOOD_VESSELS" data-name="CIRCULATION &amp; BLOOD VESSELS" class="cls-2" transform="translate(50 392.938)"><tspan x="13.083" y="10">CIRCULATION &amp; </tspan><tspan x="10.218" y="24">BLOOD VESSELS</tspan></text>
+    </g>
+    <g id="Group_692" data-name="Group 692" transform="translate(89 303.8)">
+      <path id="Path_593" data-name="Path 593" class="cls-3" d="M30.3,36.3a4.145,4.145,0,0,1-1.6.2,5.164,5.164,0,0,1-5.2-5.2,5.39,5.39,0,0,1,1.3-3.5"/>
+      <path id="Path_594" data-name="Path 594" class="cls-3" d="M28.8,11.6c.3.3,8.6,14.2,8.6,14.2s3.5,4.8,1,10a10.758,10.758,0,0,1-14.6,5c-4.7-2.5-7.6-9.2-4.5-14.1Z"/>
+      <path id="Path_595" data-name="Path 595" class="cls-4" d="M4.5,21.6A25.426,25.426,0,0,1,49,10.4"/>
+      <path id="Path_596" data-name="Path 596" class="cls-4" d="M54.9,27.8A25.52,25.52,0,0,1,6.2,37.3"/>
+      <path id="Path_597" data-name="Path 597" class="cls-5" d="M4.5,27l3.6-4.2H1Z"/>
+      <path id="Path_598" data-name="Path 598" class="cls-5" d="M54.8,23.4l-3.6,4.2h7.1Z"/>
+    </g>
+  </g>
+</svg>

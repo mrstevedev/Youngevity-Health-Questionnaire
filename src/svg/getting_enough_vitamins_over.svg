@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117 117">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ec6529;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .cls-3 {
+        fill: #fff;
+        font-size: 10px;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+      }
+    </style>
+  </defs>
+  <g id="Group_1004" data-name="Group 1004" transform="translate(-60 -432)">
+    <rect id="Rectangle_1409" data-name="Rectangle 1409" class="cls-1" width="117" height="117" rx="5" transform="translate(60 432)"/>
+    <path id="Path_864" data-name="Path 864" class="cls-2" d="M7,22.878,20.675,36.553,50.229,7" transform="translate(91.854 444.247)"/>
+    <text id="GETTING_ENOUGH_VITAMINS" data-name="GETTING
+ENOUGH VITAMINS" class="cls-3" transform="translate(84.5 494.938)"><tspan x="7.978" y="10">GETTING</tspan><tspan x="8.238" y="24">ENOUGH </tspan><tspan x="4.683" y="38">VITAMINS</tspan></text>
+  </g>
+</svg>

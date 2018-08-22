@@ -35,7 +35,7 @@ export class Quiz extends React.Component {
                     <div id="questionsContainer" className="questionsContainer">
                         <Question content={this.props.question} />
                         <Title content={this.props.title} />
-                        <Fact content={this.props.fact} />
+                        <Fact categoryId={this.props.categoryId} content={this.props.fact} />
                     </div>
 
                     <AnswerOptions
@@ -44,12 +44,16 @@ export class Quiz extends React.Component {
                         questionId={this.props.questionId}
                         name={this.props.name}
                         answers={this.props.answers}
-                        onAnswerSelected={this.props.onAnswerSelected}
-                    />
+                        onStickySelect={this.props.onStickySelect}
+                        onAnswerSelected={this.props.onAnswerSelected} />
                 </div>
+                {this.props.categoryId === 5 ? <div className="category-5-btns">
+                    <a className="prevBtn" href="#!" onClick={(e) => this.props.onPrevQuestion(this.props.questionId)}>Back</a>
+                    <a className="nextBtn" href="#!" onClick={(e) => this.props.onAnswerSelected(e)}>Next</a>
+                </div> : null}
+
                 <div className="goBackBtn">
-                    <a onClick={this.props.handlePreviousQuestion}>Go Back</a>
-                    {/* onClick get state of current questionId - 1 and then render previous questionId */}
+                    {this.props.questionId > 1 ? <a href={'#!'} onClick={(e) => this.props.onPrevQuestion(this.props.questionId)}> &#60; Go Back</a> : null}
                 </div>
             </div>
         );

@@ -9,7 +9,7 @@ export class ProgressBar extends React.Component {
         const ProgressCategories = ['Joints & Bones', 'Metabolism & Energy', 'Brain & Heart Health', 'Digestion & Immunity', 'Additional Health Goals'];
 
         const ProgressList = ProgressCategories.map((currCategory, index) => {
-            return <li key={index} className={`${currCategory} ${this.props.category === currCategory ? 'current' : ''}`}>{currCategory}</li>;
+            return <li key={index} className={`${currCategory.toLowerCase().replace(/\s+/g, '-')} ${this.props.category === currCategory.replace(/\s+/g, '-') ? 'current' : ''}`}>{currCategory}</li>;
         });
 
         return (

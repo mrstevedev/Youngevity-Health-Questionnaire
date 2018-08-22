@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117 117">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #ccc;
+      }
+
+      .cls-2 {
+        fill: #707070;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+      }
+
+      .cls-2, .cls-6 {
+        font-size: 10px;
+      }
+
+      .cls-3, .cls-8 {
+        fill: none;
+      }
+
+      .cls-3 {
+        stroke: #ec6529;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+        stroke-width: 2.5px;
+      }
+
+      .cls-4, .cls-5, .cls-6 {
+        fill: #ec6529;
+      }
+
+      .cls-4 {
+        font-size: 18px;
+        font-family: Montserrat-SemiBold, Montserrat;
+        font-weight: 600;
+      }
+
+      .cls-5 {
+        font-size: 13px;
+        font-family: Montserrat-ExtraBold, Montserrat;
+      }
+
+      .cls-5, .cls-6 {
+        font-weight: 800;
+      }
+
+      .cls-6 {
+        font-family: Montserrat-Black, Montserrat;
+      }
+
+      .cls-7 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_1005" data-name="Group 1005" transform="translate(-60 -432)">
+    <g id="Group_634" data-name="Group 634" transform="translate(10 -24)">
+      <g id="Rectangle_1411" data-name="Rectangle 1411" class="cls-1" transform="translate(50 456)">
+        <rect class="cls-7" width="117" height="117" rx="5"/>
+        <rect class="cls-8" x="0.5" y="0.5" width="116" height="116" rx="4.5"/>
+      </g>
+      <text id="STRESS_SLEEP" data-name="STRESS
+&amp; SLEEP" class="cls-2" transform="translate(59 529.938)"><tspan x="26.193" y="10">STRESS</tspan><tspan x="24.703" y="24">&amp; SLEEP</tspan></text>
+    </g>
+    <g id="Group_681" data-name="Group 681" transform="translate(92.701 443.418)">
+      <path id="Path_572" data-name="Path 572" class="cls-3" d="M25.4,38.9a12.077,12.077,0,0,1-7.974-21.2A17.847,17.847,0,1,0,37,35.46a18.336,18.336,0,0,0-.453-3.9A12.189,12.189,0,0,1,25.4,38.9Z" transform="translate(0 -1.982)"/>
+      <text id="Z" class="cls-4" transform="translate(25.148 14.582)"><tspan x="0" y="0">Z</tspan></text>
+      <text id="Z-2" data-name="Z" class="cls-5" transform="translate(41.432 26.025)"><tspan x="0" y="0">Z</tspan></text>
+      <text id="Z-3" data-name="Z" class="cls-6" transform="translate(41.738 11.033)"><tspan x="0" y="0">Z</tspan></text>
+    </g>
+  </g>
+</svg>

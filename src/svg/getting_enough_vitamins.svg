@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117 117">
+  <defs>
+    <style>
+      .cls-1, .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-1 {
+        stroke: #ccc;
+      }
+
+      .cls-2 {
+        fill: #707070;
+        font-size: 10px;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+      }
+
+      .cls-3 {
+        fill: #ec6529;
+      }
+
+      .cls-5 {
+        stroke: none;
+      }
+
+      .cls-6 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_640" data-name="Group 640" transform="translate(-50 -317)">
+    <g id="Rectangle_1409" data-name="Rectangle 1409" class="cls-1" transform="translate(50 317)">
+      <rect class="cls-5" width="117" height="117" rx="5"/>
+      <rect class="cls-6" x="0.5" y="0.5" width="116" height="116" rx="4.5"/>
+    </g>
+    <text id="GETTING_ENOUGH_VITAMINS" data-name="GETTING
+ENOUGH VITAMINS" class="cls-2" transform="translate(69 379.938)"><tspan x="13.478" y="10">GETTING</tspan><tspan x="13.738" y="24">ENOUGH </tspan><tspan x="10.183" y="38">VITAMINS</tspan></text>
+    <g id="Group_642" data-name="Group 642" transform="translate(85.986 327.02)">
+      <path id="Path_542" data-name="Path 542" class="cls-3" d="M3.118,33.463a10.5,10.5,0,0,0,14.711.2l15.83-15.83A10.544,10.544,0,0,0,18.753,2.923L2.923,18.753A10.506,10.506,0,0,0,3.118,33.463Zm29.03-29.02a8.657,8.657,0,0,1,.2,12.071l-7.257,7.257L12.82,11.5l7.248-7.257A8.66,8.66,0,0,1,32.148,4.443ZM11.5,12.82,23.762,25.087,16.5,32.344A8.678,8.678,0,0,1,4.238,20.077Z" transform="translate(0 0)"/>
+      <circle id="Ellipse_375" data-name="Ellipse 375" class="cls-4" cx="11.427" cy="11.427" r="11.427" transform="translate(15.497 18.435)"/>
+      <path id="Path_544" data-name="Path 544" class="cls-3" d="M301.577,76.541a4.665,4.665,0,0,1-.914,5.308l-1.315,1.325a.93.93,0,0,0,1.315,1.315l1.315-1.315a6.558,6.558,0,0,0,1.278-7.435.926.926,0,0,0-1.241-.438A.945.945,0,0,0,301.577,76.541Z" transform="translate(-271.164 -68.18)"/>
+      <path id="Path_545" data-name="Path 545" class="cls-3" d="M174.93,206.969a12.407,12.407,0,1,0-17.546,0A12.605,12.605,0,0,0,174.93,206.969Zm-1.315-16.222a10.332,10.332,0,0,1,2.966,6.52H155.742a10.478,10.478,0,0,1,2.966-6.52A10.666,10.666,0,0,1,173.615,190.747Zm-17.873,8.386h20.839a10.331,10.331,0,0,1-2.966,6.52,10.684,10.684,0,0,1-14.907,0A10.354,10.354,0,0,1,155.742,199.133Z" transform="translate(-138.471 -165.524)"/>
+    </g>
+  </g>
+</svg>
